@@ -34,5 +34,5 @@
     <%= Contact.find(address.contact_id).firstname %>
   </p>
 </div>
-
-<%= link_to "Show this address", address_path(address) %>
+<%= link_to 'Edit this address', "#{edit_address_path(address)}?contact_id=#{address.contact_id}" %> |
+<%= button_to "Destroy this address", address, method: :delete %>

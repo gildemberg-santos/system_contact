@@ -8,8 +8,6 @@
   <%= button_to "Destroy this contact", @contact, method: :delete %>
 </div>
 
-<h2>Addresses</h2>
+<%= render "addresses/addresses", contact: @contact %>
 
-<% @contact.addresses.each do |address| %> 
-  <%= render "addresses/address", address: address %>
-<% end %>
+<%# link_to "Add an address", new_contact_address_path(@contact) %>

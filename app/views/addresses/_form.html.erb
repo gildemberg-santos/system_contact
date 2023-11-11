@@ -42,8 +42,7 @@
   </div>
 
   <div>
-    <%= form.label :contact_id, style: "display: block" %>
-    <%= form.collection_select :contact_id, Contact.all, :id, :firstname %>
+    <%= form.hidden_field :contact_id, value: params[:contact_id] %>
   </div>
 
   <div>

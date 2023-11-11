@@ -1,0 +1,7 @@
+<h1>Addresses Tela</h1>
+
+<% @contact.addresses.each do |address| %>
+  <%= render "addresses/address", address: address %>
+<% end %>
+
+<%= link_to "New address", "#{new_address_path}/?contact_id=#{@contact.id}" %>
