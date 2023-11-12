@@ -1,13 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @contact %>
-
-<div>
-  <%= link_to "Edit this contact", edit_contact_path(@contact) %> |
-  <%= link_to "Back to contacts", contacts_path %>
-  <%= button_to "Destroy this contact", @contact, method: :delete %>
+<div class="container-fluid">
+  <div class="display-1">Contact</div>
+  <p class="text-success lead"><%= notice %></p>
+  <%= render @contact %>
+  <div class="d-flex flex-row mt-3 mb-3">
+    <%= link_to "Edit this contact", edit_contact_path(@contact), class: "btn btn-primary" %>
+    <%= link_to "Back to contacts", contacts_path, class: "btn btn-warning ms-1" %>
+    <%= button_to "Destroy this contact", @contact, method: :delete, class: "btn btn-danger ms-1" %>
+  </div>
+  <hr class="border border-primary bg-primary"/>
+  <div class="bg-body-secondary p-3">
+    <%= render "addresses/addresses", contact: @contact %>
+  </div>
 </div>
-
-<%= render "addresses/addresses", contact: @contact %>
-
-<%# link_to "Add an address", new_contact_address_path(@contact) %>

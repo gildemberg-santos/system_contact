@@ -1,7 +1,8 @@
-<h1>Addresses Tela</h1>
+<div class="display-5">Addresses</div>
 
 <% @contact.addresses.each do |address| %>
   <%= render "addresses/address", address: address %>
+  <hr class="border border-primary bg-primary"/>
 <% end %>
 
-<%= link_to "New address", "#{new_address_path}/?contact_id=#{@contact.id}" %>
+<%= link_to "New address", "#{new_address_path}/?contact_id=#{@contact.id}", class: "btn btn-primary mt-3" %>
