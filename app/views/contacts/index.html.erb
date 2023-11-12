@@ -4,8 +4,7 @@
   <div class="bg-body-secondary p-3 mt-3">
     <% @contacts.each do |contact| %>
       <div class="mt-3">
-        <%= render contact %>
-        <%= link_to "Show this contact", contact, class: "btn btn-info mt-3" %>
+        <%= render "contact_short", contact: contact %>
         <hr class="border border-primary bg-primary"/>
       </div>
     <% end %>
