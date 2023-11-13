@@ -43,7 +43,7 @@
 
   <div>
     <%= form.label :contact_id, style: "display: block" %>
-    <%= form.text_field :contact_id %>
+    <%= form.collection_select :contact_id, Contact.all, :id, :firstname %>
   </div>
 
   <div>

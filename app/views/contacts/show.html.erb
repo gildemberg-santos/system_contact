@@ -5,6 +5,11 @@
 <div>
   <%= link_to "Edit this contact", edit_contact_path(@contact) %> |
   <%= link_to "Back to contacts", contacts_path %>
-
   <%= button_to "Destroy this contact", @contact, method: :delete %>
 </div>
+
+<h2>Addresses</h2>
+
+<% @contact.addresses.each do |address| %> 
+  <%= render "addresses/address", address: address %>
+<% end %>

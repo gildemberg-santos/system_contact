@@ -31,7 +31,8 @@
 
   <p>
     <strong>Contact:</strong>
-    <%= address.contact_id %>
+    <%= Contact.find(address.contact_id).firstname %>
   </p>
-
 </div>
+
+<%= link_to "Show this address", address_path(address) %>
