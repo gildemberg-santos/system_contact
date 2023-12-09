@@ -2,7 +2,13 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.where('firstname LIKE ? or lastname LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%")
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data @contacts.to_csv, filename: "contacts-#{Time.now.to_i}.csv"
+      end
+    end
   end
 
   def show; end
